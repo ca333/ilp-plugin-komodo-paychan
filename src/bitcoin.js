@@ -33,7 +33,7 @@ async function getTx (client, txid) {
 
 function publicKeyToAddress (publicKey) {
   return bitcoinjs.ECPair
-    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.bitcoin)
+    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.komodo)
     .getAddress()
 }
 
@@ -52,7 +52,7 @@ async function createTx ({
   script,
   amount
 }) {
-  const address = scriptToP2SH({ script, network: bitcoinjs.networks.bitcoin })
+  const address = scriptToP2SH({ script, network: bitcoinjs.networks.komodo })
   console.log('sending to address', address, 'with amount', amount)
   return await client.command('sendtoaddress', address, amount / BTC_SCALE)
 }
@@ -93,7 +93,7 @@ function generateRawClosureTx ({
   // TODO: is this an appropriate fee?
   // TODO: support other networks
   const _fee = fee || DEFAULT_FEE
-  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.bitcoin)
+  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.komodo)
 
   tx.addInput(txid, outputIndex)
   tx.addOutput(receiverKeypair.getAddress(), +claimAmount)
@@ -111,7 +111,7 @@ function generateExpireTx ({
   fee
 }) {
   const _fee = fee || DEFAULT_FEE
-  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.bitcoin)
+  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.komodo)
 
   tx.setLockTime(timeout)
   tx.addInput(txid, outputIndex, FINAL_SEQUENCE)
@@ -165,12 +165,12 @@ function secretToKeypair (secret) {
   return new bitcoinjs.ECPair(
     BigInteger.fromBuffer(Buffer.from(secret, 'hex')),
     null,
-    { network: bitcoinjs.networks.bitcoin })
+    { network: bitcoinjs.networks.komodo })
 }
 
 function publicToKeypair (publicKey) {
   return bitcoinjs.ECPair
-    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.bitcoin)
+    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.komodo)
 }
 
 module.exports = {
