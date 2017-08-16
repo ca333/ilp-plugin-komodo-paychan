@@ -5,7 +5,7 @@ const BigInteger = require('bigi')
 const BitcoinClient = require('bitcoin-core')
 const url = require('url')
 
-const BTC_SCALE = 1e8
+const BTC_SCALE = 1e0
 const DEFAULT_FEE = 1e5
 const FINAL_SEQUENCE = 0xfffffffe
 const HASH_ALL = 1
