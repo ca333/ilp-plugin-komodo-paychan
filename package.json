@@ -13,7 +13,7 @@
     "bignumber.js": "^4.0.2",
     "bitcoin-core": "^1.2.0",
     "bitcoinjs-lib-zcash": "^3.0.0",
-    "zcash-bitcore-lib": "0.13.20-rc3",
+    "zcash-bitcore-lib": "^0.13.20-rc3",
     "debug": "^2.6.8",
     "eventemitter2": "^4.1.0"
   },
