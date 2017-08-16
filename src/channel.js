@@ -2,8 +2,8 @@ const url = require('url')
 const shared = require('ilp-plugin-shared')
 const bitcoin = require('./bitcoin')
 const BigInteger = require('bigi')
-const bitcoinjs = require('bitcoinjs-lib')
-const debug = require('debug')('ilp-plugin-bitcoin-paychan:channel')
+const bitcoinjs = require('bitcoinjs-lib-zcash')
+const debug = require('debug')('ilp-plugin-komodo-paychan:channel')
 
 module.exports = class Channel {
   constructor ({
