@@ -1,6 +1,6 @@
 'use strict'
 
-const bitcoinjs = require('bitcoinjs-lib')
+const bitcoinjs = require('bitcoinjs-lib-zcash')
 const BigInteger = require('bigi')
 const BitcoinClient = require('bitcoin-core')
 const url = require('url')
@@ -15,13 +15,14 @@ function getClient ({ uri, network }) {
   const [ user, pass ] = _uri.auth.split(':')
 
   return new BitcoinClient({
-    network: network,
-    host: _uri.hostname,
-    ssl: ((uri.protocol === 'https:')
-      ? { enabled: true, strict: true }
-      : false),
+    //network: network,
+    //host: _uri.hostname,
+    //ssl: ((uri.protocol === 'https:')
+    //  ? { enabled: true, strict: true }
+    //  : false),
     username: user,
-    password: pass
+    password: pass,
+    port: '7771'
   })
 }
 
@@ -32,7 +33,7 @@ async function getTx (client, txid) {
 
 function publicKeyToAddress (publicKey) {
   return bitcoinjs.ECPair
-    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.testnet)
+    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.bitcoin)
     .getAddress()
 }
 
@@ -51,7 +52,7 @@ async function createTx ({
   script,
   amount
 }) {
-  const address = scriptToP2SH({ script, network: bitcoinjs.networks.testnet })
+  const address = scriptToP2SH({ script, network: bitcoinjs.networks.bitcoin })
   console.log('sending to address', address, 'with amount', amount)
   return await client.command('sendtoaddress', address, amount / BTC_SCALE)
 }
@@ -92,7 +93,7 @@ function generateRawClosureTx ({
   // TODO: is this an appropriate fee?
   // TODO: support other networks
   const _fee = fee || DEFAULT_FEE
-  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.testnet)
+  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.bitcoin)
 
   tx.addInput(txid, outputIndex)
   tx.addOutput(receiverKeypair.getAddress(), +claimAmount)
@@ -110,7 +111,7 @@ function generateExpireTx ({
   fee
 }) {
   const _fee = fee || DEFAULT_FEE
-  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.testnet)
+  const tx = new bitcoinjs.TransactionBuilder(bitcoinjs.networks.bitcoin)
 
   tx.setLockTime(timeout)
   tx.addInput(txid, outputIndex, FINAL_SEQUENCE)
@@ -164,12 +165,12 @@ function secretToKeypair (secret) {
   return new bitcoinjs.ECPair(
     BigInteger.fromBuffer(Buffer.from(secret, 'hex')),
     null,
-    { network: bitcoinjs.networks.testnet })
+    { network: bitcoinjs.networks.bitcoin })
 }
 
 function publicToKeypair (publicKey) {
   return bitcoinjs.ECPair
-    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.testnet)
+    .fromPublicKeyBuffer(Buffer.from(publicKey, 'hex'), bitcoinjs.networks.bitcoin)
 }
 
 module.exports = {
