@@ -1,6 +1,6 @@
 'use strict'
 
-const bitcoinjs = require('bitcoinjs-lib')
+const bitcoinjs = require('bitcoinjs-lib-zcash')
 const bitcoin = require('../src/bitcoin')
 const [ , , senderPublicKey, receiverPublicKey, timeout, network ] = process.argv
 
