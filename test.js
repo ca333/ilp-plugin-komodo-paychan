@@ -108,14 +108,14 @@ async function run () {
   const alice = new PluginBitcoin({
     _store: new ObjectStore(),
     //outgoingAmount: 1 * BTC_SCALE,
-    outgoingAmount: 0.00000001 * BTC_SCALE,
+    outgoingAmount: 0.0000001 * BTC_SCALE,
     /*incomingTxId: txBA,
     outgoingTxId: txAB,
     // TODO: maybe these are wrong sometimes
     incomingOutputIndex: 0,
     outgoingOutputIndex: 0,*/
     //maxInFlight: 0.5 * BTC_SCALE,
-    maxInFlight: 0.000000005 * BTC_SCALE,
+    maxInFlight: 0.00000005 * BTC_SCALE,
     rpcUri: 'http://localhost:7777/bob',
     secret: secretAlice,
     timeout: timeoutstamp,
@@ -128,14 +128,14 @@ async function run () {
   const bob = new PluginBitcoin({
     _store: new ObjectStore(),
     //outgoingAmount: 1 * BTC_SCALE,
-    outgoingAmount: 0.00000001 * BTC_SCALE,
+    outgoingAmount: 0.0000001 * BTC_SCALE,
     /*incomingTxId: txAB,
     outgoingTxId: txBA,
     // TODO: maybe these are wrong sometimes
     incomingOutputIndex: 0,
     outgoingOutputIndex: 0,*/
     //maxInFlight: 0.5 * BTC_SCALE,
-    maxInFlight: 0.000000005 * BTC_SCALE,
+    maxInFlight: 0.00000005 * BTC_SCALE,
     rpcUri: 'http://localhost:7777/alice',
     secret: secretBob,
     timeout: timeoutstamp,
@@ -195,7 +195,7 @@ async function run () {
     id: uuid(),
     to: bob.getAccount(),
     //amount: 0.1 * BTC_SCALE,
-    amount: 0.0000000001 * BTC_SCALE,
+    amount: 0.000000001 * BTC_SCALE,
     ilp: 'thequickbrownfoxjumpsoverthelazydog',
     executionCondition: base64url(condition),
     expiresAt: new Date(Date.now() + 1000).toISOString()
