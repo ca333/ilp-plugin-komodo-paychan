@@ -1,6 +1,6 @@
 'use strict'
 
-const debug = require('debug')('ilp-plugin-bitcoin-paychan')
+const debug = require('debug')('ilp-plugin-komodo-paychan')
 const crypto = require('crypto')
 const shared = require('ilp-plugin-shared')
 const bitcoin = require('./bitcoin')
