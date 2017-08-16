@@ -75,8 +75,8 @@ async function run () {
 
   console.log(chalk.grey('set timeout to ' + timeoutstamp))
   console.log(chalk.grey('generating channel addresses'))
-  const secretAlice = '3b6386909838945a840b26c10fc794b1a536ea1ab02c162ecb62d565e24ed94a'
-  const secretBob = '80044da2f41364353b173aacc42b8694125cda4636a979105c400e4d6bf4684f'
+  const secretAlice = 'a00b6712d14d40257c4a0fbf8a08305ca81d0e8a829fa7baebff64e47385a241'
+  const secretBob = '70f062a1395a96f994647cf015e68523f2ca63d75c8efecc69c5d3c185019844'
   const kpA = bitcoin.secretToKeypair(secretAlice)
   const kpB = bitcoin.secretToKeypair(secretBob)
 
