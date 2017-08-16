@@ -195,7 +195,7 @@ async function run () {
     id: uuid(),
     to: bob.getAccount(),
     //amount: 0.1 * BTC_SCALE,
-    amount: 0.000000001 * BTC_SCALE,
+    amount: 0.0000001 * BTC_SCALE,
     ilp: 'thequickbrownfoxjumpsoverthelazydog',
     executionCondition: base64url(condition),
     expiresAt: new Date(Date.now() + 1000).toISOString()
