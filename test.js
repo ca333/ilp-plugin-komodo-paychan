@@ -13,6 +13,8 @@ const chalk = require('chalk')
 const BTC_SCALE = 1e8
 const USER = process.env.BTC_USER
 const PASS = process.env.BTC_PASS
+const A_SECRET = process.env.A_SECRET
+const B_SECRET = process.env.B_SECRET
 
 if (!USER || !PASS) {
   throw new Error('set env variables BTC_USER and BTC_PASS to connect to RPC')
@@ -75,8 +77,8 @@ async function run () {
 
   console.log(chalk.grey('set timeout to ' + timeoutstamp))
   console.log(chalk.grey('generating channel addresses'))
-  const secretAlice = 'a00b6712d14d40257c4a0fbf8a08305ca81d0e8a829fa7baebff64e47385a241'
-  const secretBob = '70f062a1395a96f994647cf015e68523f2ca63d75c8efecc69c5d3c185019844'
+  const secretAlice = A_SECRET
+  const secretBob = B_SECRET
   const kpA = bitcoin.secretToKeypair(secretAlice)
   const kpB = bitcoin.secretToKeypair(secretBob)
 
