@@ -44,7 +44,8 @@ module.exports = class Channel {
 
     this._client = bitcoin.getClient({
       uri: this._bitcoinUri,
-      network: this._network
+      //network: this._network <-----
+      network: bitcoinjs.networks.komodo
     })
 
     this._redeemScript = bitcoin.generateScript({
