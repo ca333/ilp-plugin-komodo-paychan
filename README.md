@@ -1,3 +1,5 @@
+# NOTE: currently address generation for Komodo is not complete, and results partially erroneous
+
 # ilp-plugin-komodo-paychan
 > Interledger.js Ledger Plugin for Komodo using CLTV Payment Channels
 
