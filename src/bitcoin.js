@@ -15,8 +15,8 @@ function getClient ({ uri, network }) {
   const [ user, pass ] = _uri.auth.split(':')
 
   return new BitcoinClient({
-    //network: network,
-    //host: _uri.hostname,
+    network: network,
+    host: _uri.hostname,
     //ssl: ((uri.protocol === 'https:')
     //  ? { enabled: true, strict: true }
     //  : false),
