@@ -89,13 +89,13 @@ async function run () {
     senderKeypair: kpA,
     receiverKeypair: kpB,
     timeout: timeoutstamp,
-    network: btc.networks.testnet
+    network: btc.networks.komodo
   })
   const addrBA = bitcoin.generateP2SH({
     senderKeypair: kpB,
     receiverKeypair: kpA,
     timeout: timeoutstamp,
-    network: btc.networks.testnet
+    network: btc.networks.komodo
   })
   
   console.log(chalk.grey('funding channels'))
@@ -121,7 +121,7 @@ async function run () {
     rpcUri: 'http://localhost:7777/bob',
     secret: secretAlice,
     timeout: timeoutstamp,
-    network: 'testnet',
+    network: 'komodo',
     peerPublicKey: kpB.getPublicKeyBuffer().toString('hex'),
     bitcoinUri: 'http://' + USER + ':' + PASS + '@localhost:18444'
   })
@@ -141,7 +141,7 @@ async function run () {
     rpcUri: 'http://localhost:7777/alice',
     secret: secretBob,
     timeout: timeoutstamp,
-    network: 'testnet',
+    network: 'komodo',
     peerPublicKey: kpA.getPublicKeyBuffer().toString('hex'),
     bitcoinUri: 'http://' + USER + ':' + PASS + '@localhost:18444'
   })
