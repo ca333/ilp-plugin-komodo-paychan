@@ -18,7 +18,7 @@ This plugin enables [Interledger](https://interledger.org) payments through [Kom
 **Setup:**
 
 ```sh
-git clone https://github.com/interledgerjs/ilp-plugin-komodo-paychan.git
+git clone https://github.com/nuevax/ilp-plugin-komodo-paychan.git
 cd ilp-plugin-komodo-paychan
 npm install
 ```
