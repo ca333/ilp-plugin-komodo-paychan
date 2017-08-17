@@ -11,7 +11,7 @@
   "dependencies": {
     "ilp-plugin-shared": "interledgerjs/ilp-plugin-shared#master",
     "bignumber.js": "^4.0.2",
-    "bitcoin-core": "^1.2.0",
+    "bitcoin-core": "nuevax/bitcoin-core",
     "bitcoinjs-lib-zcash": "nuevax/bitcoinjs-lib#zcash",
     "zcash-bitcore-lib": "^0.13.20-rc3",
     "debug": "^2.6.8",
