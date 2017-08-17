@@ -52,7 +52,7 @@ module.exports = class Channel {
       receiverKeypair: this._receiverKeypair,
       timeout: this._timeout,
       // network: this._network
-      network: bitcoinjs.networks.testnet
+      network: bitcoinjs.networks.komodo
     })
   }
 
