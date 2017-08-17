@@ -22,7 +22,7 @@ function getClient ({ uri, network }) {
     //  : false),
     username: user,
     password: pass,
-    port: '7771'
+    //port: '7771'
   })
 }
 
