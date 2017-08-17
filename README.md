@@ -1,7 +1,7 @@
 # ilp-plugin-bitcoin-paychan
 > Interledger.js Ledger Plugin for Bitcoin using CLTV Payment Channels
 
-<a href="https://pbs.twimg.com/profile_images/771386948967628800/wZ7HfEDI_400x400.jpg" alt="KOMODO" height="50px" /></a><img height="45" hspace="5" /><img src="./images/plus.png" height="45" /><img height="45" hspace="5" /><a href="https://interledger.org"><img src="./images/interledgerjs.png" alt="Interledger.js" height="50px" /></a>
+<a href="https://komodoplatform.com"><img src="./images/komodo.jpg" alt="Komodo" height="50px" /></a><img height="45" hspace="5" /><img src="./images/plus.png" height="45" /><img height="45" hspace="5" /><a href="https://interledger.org"><img src="./images/interledgerjs.png" alt="Interledger.js" height="50px" /></a>
 
 
 This plugin enables [Interledger](https://interledger.org) payments through [Bitcoin](https://bitcoin.org) using simple payment channels.
