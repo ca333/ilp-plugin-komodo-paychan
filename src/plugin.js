@@ -41,7 +41,7 @@ module.exports = class PluginBitcoinPaychan extends EventEmitter2 {
     this._address = bitcoin.publicKeyToAddress(this._keypair.getPublicKeyBuffer().toString('hex'))
     this._peerAddress = bitcoin.publicKeyToAddress(peerPublicKey)
 
-    this._prefix = 'g.crypto.bitcoin.' + ((this._address > this._peerAddress)
+    this._prefix = 'g.crypto.komodo.' + ((this._address > this._peerAddress)
       ? this._address + '~' + this._peerAddress
       : this._peerAddress + '~' + this._address) + '.'
 
@@ -127,7 +127,7 @@ module.exports = class PluginBitcoinPaychan extends EventEmitter2 {
   getInfo () {
     return {
       prefix: this._prefix,
-      currencyCode: 'BTC',
+      currencyCode: 'KMD',
       currencyScale: 8,
       connectors: [ this._prefix + this._peerPublicKey ]
     }
