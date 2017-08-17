@@ -62,7 +62,7 @@ module.exports = class PluginBitcoinPaychan extends EventEmitter2 {
       timeout: timeout,
       uri: this._bitcoinUri,
       store: _store,
-      network: 'testnet',
+      network: 'komodo',
       secret: this._secret
     }
 
