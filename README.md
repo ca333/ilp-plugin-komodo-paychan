@@ -23,6 +23,8 @@ cd ilp-plugin-komodo-paychan
 npm install
 ```
 
+**Test:**
+
 on a node with a funded komodod on port 7771 (or change port in src/bitcoin.js) run test.js with
 ```sh
 BTC_USER=rpcuser BTC_PASS=rpcpassword A_SECRET=alicesecret B_SECRET=bobsecret node test.js
