@@ -1,5 +1,5 @@
 # ilp-plugin-komodo-paychan
-> Interledger.js Ledger Plugin for komodo using CLTV Payment Channels
+> Interledger.js Ledger Plugin for Komodo using CLTV Payment Channels
 
 <a href="https://komodoplatform.com"><img src="./images/komodo.jpg" alt="Komodo" height="50px" /></a><img height="45" hspace="5" /><img src="./images/plus.png" height="45" /><img height="45" hspace="5" /><a href="https://interledger.org"><img src="./images/interledgerjs.png" alt="Interledger.js" height="50px" /></a>
 
@@ -29,7 +29,7 @@ on a node with a funded komodod on port 7771 (or change port in src/bitcoin.js) 
 ```sh
 BTC_USER=rpcuser BTC_PASS=rpcpassword A_SECRET=alicesecret B_SECRET=bobsecret node test.js
 ```
-for alicesecret and bobsecret you may use Iguana "encryptwallet" API-call for generating 64 digit respective privkey
+for alicesecret and bobsecret you may use Iguana "encryptwallet" API-call for generating 64 character respective privkey
 
 ## How It Works
 
