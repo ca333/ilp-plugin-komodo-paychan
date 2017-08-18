@@ -31,7 +31,7 @@ on a node with a funded komodod on port 7771 (or change port in src/bitcoin.js) 
 ```sh
 BTC_USER=rpcuser BTC_PASS=rpcpassword A_SECRET=alicesecret B_SECRET=bobsecret node test.js
 ```
-for alicesecret and bobsecret you may use Iguana "encryptwallet" API-call for generating 64 character respective privkey
+for alicesecret and bobsecret Iguana "encryptwallet" API-call can generate 64 character respective privkey
 
 ## How It Works
 
